@@ -1,17 +1,39 @@
 body {
     position: relative;
-    min-height: 100vh; /* Full viewport height */
+    min-height: 100vh;
+    /* Full viewport height */
     margin: 0;
-  }
-p {
-    background-image: url('assetz/bg.jpg')
+    background-image: url('assetz/bg.jpg');
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: cover;
+}
+
+p {
+
     font-style: italic;
     text-align: center;
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+}
+
+#brix {
+    background-image: url('assetz/brix.png');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+
+}
+
+imgs {
+    position: absolute;
+    align: center;
+    size: 50%;
+}
+
+td {
+    position: relative;
+
 }
