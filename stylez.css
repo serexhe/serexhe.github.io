@@ -1,4 +1,4 @@
-body {
+ body {
     position: relative;
     min-height: 100vh;
     /* Full viewport height */
@@ -37,3 +37,31 @@ td {
     position: relative;
 
 }
+
+
+
+
+body {
+    margin: 0;
+    padding: 0;
+  }
+
+.flex-container {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    overflow-y: auto;
+    z-index: 0;
+  }
+  
+  .flex-container img {
+    flex: 0 0 auto;
+    width: 100%;
+  }
+
+  .fixed-element {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    z-index: 1;
+  }
