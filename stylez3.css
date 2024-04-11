@@ -1,5 +1,5 @@
 /* Ensure the first image adapts to the screen size */
-.image-row:first-child .image-container img {
+.image-row:first-child {
     display: flex;
     justify-content: space-between;
 }
