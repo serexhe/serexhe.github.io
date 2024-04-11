@@ -86,11 +86,7 @@ body {
 
 
 
-.image-container-img {
-    width: 100%;
-    height: auto; /* Maintains the aspect ratio */
-    object-fit: cover; /* Ensures the image covers the area without distorting its aspect ratio */
-}
+
 
 .image-container img {
     width: 100%;
