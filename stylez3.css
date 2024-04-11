@@ -130,7 +130,7 @@ body {
 
 
 
-.flex-containerXXX {
+.flex-container {
     display: flex;
     flex-direction: column;
     flex-wrap: nowrap;
