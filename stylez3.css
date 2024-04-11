@@ -11,8 +11,8 @@ body {
 }
 
 .image-container-2 {
-    position: relative;
-    display: inline-block;
+    flex: 1 0 auto; /* Allows the container to grow and shrink */
+    margin: 0px; /* Adjust spacing around each image */
 }
 
 .image-container-2:before,
@@ -50,8 +50,8 @@ body {
 
 
 .image-container-3 {
-    position: relative;
-    display: inline-block;
+    flex: 1 0 auto; /* Allows the container to grow and shrink */
+    margin: 0px; /* Adjust spacing around each image */
 }
 
 .image-container-3:before,
@@ -86,7 +86,13 @@ body {
 
 
 
-.image-container img {
+.image-container-img {
+    width: 100%;
+    height: auto; /* Maintains the aspect ratio */
+    object-fit: cover; /* Ensures the image covers the area without distorting its aspect ratio */
+}
+
+.image-container imgXXX {
     width: 100%;
     height: 100vh; /* vh stands for viewport height */
     object-fit: cover; /* This ensures the image covers the area without distorting its aspect ratio */
