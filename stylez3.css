@@ -1,28 +1,26 @@
-body {
-    margin: 0;
-    padding: 0;
-  }
+/* Ensure the first image adapts to the screen size */
+.image-row:first-child .image-container img {
+    width: 100%;
+    height: auto;
+    object-fit: cover; /* Maintains aspect ratio while covering the area */
+}
 
-
-
-
-.image-row {
+/* Align the images in the second row horizontally */
+.image-row:nth-child(2) {
     display: flex;
-    flex-wrap: wrap;
     justify-content: space-between; /* Adjust spacing between images as needed */
 }
 
-
-
-
-
-.image-container-2 {
-    flex: 1 0 auto; /* Allows the container to grow and shrink */
-    margin: 0px; /* Adjust spacing around each image */
+/* Hover effect using :before and :after pseudo-elements */
+.image-container {
+    position: relative;
+    width: 100%; /* Ensure the container takes full width */
+    height: 0; /* Set to 0 to allow the image to control the height */
+    padding-bottom: 100%; /* Aspect ratio control */
 }
 
-.image-container-2:before,
-.image-container-2:after {
+.image-container:before,
+.image-container:after {
     content: "";
     position: absolute;
     top: 0;
@@ -32,112 +30,21 @@ body {
     transition: opacity 0.5s ease;
 }
 
-.image-container-2:before {
-    background-image: url('assetz2/b1.jpg');
+.image-container:before {
+    background-image: attr(data-default);
     background-size: cover;
 }
 
-.image-container-2:after {
-    background-image: url('assetz2/b2.jpg');
+.image-container:after {
+    background-image: attr(data-hover);
     background-size: cover;
     opacity: 0;
 }
 
-.image-container-2:hover:after {
+.image-container:hover:after {
     opacity: 1;
 }
 
-.image-container-2:hover:before {
+.image-container:hover:before {
     opacity: 0;
 }
-
-
-
-
-
-.image-container-3 {
-    flex: 1 0 auto; /* Allows the container to grow and shrink */
-    margin: 0px; /* Adjust spacing around each image */
-}
-
-.image-container-3:before,
-.image-container-3:after {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    transition: opacity 0.5s ease;
-}
-
-.image-container-3:before {
-    background-image: url('assetz2/c1.jpg');
-    background-size: cover;
-}
-
-.image-container-3:after {
-    background-image: url('assetz2/c2.jpg');
-    background-size: cover;
-    opacity: 0;
-}
-
-.image-container-3:hover:after {
-    opacity: 1;
-}
-
-.image-container-3:hover:before {
-    opacity: 0;
-}
-
-
-
-
-
-.image-container imgXXXX {
-    width: 100%;
-    height: 100vh; /* vh stands for viewport height */
-    object-fit: cover; /* This ensures the image covers the area without distorting its aspect ratio */
-}
-
-
-
-
-
-
-
-
-
-
-.flex-container {
-    display: flex;
-    flex-direction: column;
-    flex-wrap: nowrap;
-    overflow-y: auto;
-    z-index: 0;
-  }
-  
-  .flex-container img {
-    flex: 0 0 auto;
-    width: 100%;
-  }
-
-  .fixed-element {
-    position: fixed;
-    top: 20px;
-    left: 20px;
-    z-index: 1;
-  }
-
-  .fixed-element2 {
-    position: fixed;
-    top: 15%;
-    left: 50%;
-    z-index: 2;
-    width: 20%;
-  }
-
-  .center {
-    margin: auto;
-    
-  }
