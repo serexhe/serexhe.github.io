@@ -1,25 +1,14 @@
-/* Style for the image row */
-.image-row {
-    display: flex;
-    justify-content: space-between; /* Adjust spacing between images as needed */
-    flex-wrap: wrap; /* Allows items to wrap onto new lines */
-}
+body {
+    margin: 0;
+    padding: 0;
+  }
 
-/* Style for the image container */
+
 .image-container {
     position: relative;
-    flex: 1 0 auto; /* Allows the container to grow and shrink */
-    margin: 10px; /* Adjust spacing around each image */
+    display: inline-block;
 }
 
-/* Style for the images */
-.image-container img {
-    width: 100%;
-    height: auto; /* Maintains the aspect ratio */
-    object-fit: cover; /* Ensures the image covers the area without distorting its aspect ratio */
-}
-
-/* Hover effect using :before and :after pseudo-elements */
 .image-container:before,
 .image-container:after {
     content: "";
@@ -32,12 +21,12 @@
 }
 
 .image-container:before {
-    background-image: attr(data-default);
+    background-image: url('assetz2/b.jpg');
     background-size: cover;
 }
 
 .image-container:after {
-    background-image: attr(data-hover);
+    background-image: url('assetz2/c.jpg');
     background-size: cover;
     opacity: 0;
 }
@@ -49,3 +38,43 @@
 .image-container:hover:before {
     opacity: 0;
 }
+
+
+
+
+
+
+
+
+.flex-container {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    overflow-y: auto;
+    z-index: 0;
+  }
+  
+  .flex-container img {
+    flex: 0 0 auto;
+    width: 100%;
+  }
+
+  .fixed-element {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    z-index: 1;
+  }
+
+  .fixed-element2 {
+    position: fixed;
+    top: 15%;
+    left: 50%;
+    z-index: 2;
+    width: 20%;
+  }
+
+  .center {
+    margin: auto;
+    
+  }
