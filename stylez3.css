@@ -92,7 +92,7 @@ body {
     object-fit: cover; /* Ensures the image covers the area without distorting its aspect ratio */
 }
 
-.image-container imgXXX {
+.image-container img {
     width: 100%;
     height: 100vh; /* vh stands for viewport height */
     object-fit: cover; /* This ensures the image covers the area without distorting its aspect ratio */
