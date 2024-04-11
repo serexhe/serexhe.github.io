@@ -4,11 +4,17 @@ body {
   }
 
 
+
+
 .image-row {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between; /* Adjust spacing between images as needed */
 }
+
+
+
+
 
 .image-container-2 {
     flex: 1 0 auto; /* Allows the container to grow and shrink */
@@ -88,48 +94,13 @@ body {
 
 
 
-.image-container img {
+.image-container imgXXXX {
     width: 100%;
     height: 100vh; /* vh stands for viewport height */
     object-fit: cover; /* This ensures the image covers the area without distorting its aspect ratio */
 }
 
 
-.image-container {
-    position: relative;
-    display: inline-block;
-    margin-right: 0px; /* Adjust spacing between images as needed */
-}
-
-.image-container:before,
-.image-container:after {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    transition: opacity 0.5s ease;
-}
-
-.image-container:before {
-    background-image: attr(data-default);
-    background-size: cover;
-}
-
-.image-container:after {
-    background-image: attr(data-hover);
-    background-size: cover;
-    opacity: 0;
-}
-
-.image-container:hover:after {
-    opacity: 1;
-}
-
-.image-container:hover:before {
-    opacity: 0;
-}
 
 
 
