@@ -48,7 +48,6 @@ body {
 .image-container {
     position: relative;
     display: inline-block;
-    margin-right: 0px; /* Adjust spacing between images as needed */
 }
 
 .image-container:before,
@@ -63,12 +62,12 @@ body {
 }
 
 .image-container:before {
-    background-image: attr(data-default);
+    background-image: url('assetz2/b1.jpg');
     background-size: cover;
 }
 
 .image-container:after {
-    background-image: attr(data-hover);
+    background-image: url('assetz2/b2.jpg');
     background-size: cover;
     opacity: 0;
 }
