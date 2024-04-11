@@ -1,8 +1,7 @@
 /* Ensure the first image adapts to the screen size */
 .image-row:first-child .image-container img {
-    width: 100%;
-    height: auto;
-    object-fit: cover; /* Maintains aspect ratio while covering the area */
+    display: flex;
+    justify-content: space-between;
 }
 
 /* Align the images in the second row horizontally */
