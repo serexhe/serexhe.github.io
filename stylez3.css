@@ -1,6 +1,11 @@
+.image-row {
+    display: flex;
+    justify-content: space-between;
+
+
 .image-container1 {
     float: left;
-    margin-right: 00px; /* Adjust spacing between images as needed */
+    margin-right: 0px; /* Adjust spacing between images as needed */
 }
 
 .image-container1:before,
@@ -38,7 +43,7 @@
 
 .image-container2 {
     float: left;
-    margin-right: 00px; /* Adjust spacing between images as needed */
+    margin-right: 0px; /* Adjust spacing between images as needed */
 }
 
 .image-container2:before,
