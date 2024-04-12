@@ -38,9 +38,10 @@ body {
 
 
 
-
-
-
+.image-row {
+    display: flex;
+    justify-content: space-between; /* Adjust spacing between images as needed */
+}
 
 
 
