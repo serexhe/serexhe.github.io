@@ -26,8 +26,8 @@ body {
 
   .fixed-element-2 {
     position: fixed;
-    top: 40%;
-    left: 70%;
+    top: 37%;
+    left: 73%;
     z-index: 2;
     width: 100%;
   }
