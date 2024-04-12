@@ -47,7 +47,17 @@ body {
 
 
 
+.image-container-1 img {
+    width: 100%;
+    height: 100vh; /* vh stands for viewport height */
+    object-fit: cover; /* This ensures the image covers the area without distorting its aspect ratio */
+}
 
+.image-container-2 img {
+    width: 100%;
+    height: 100vh; /* vh stands for viewport height */
+    object-fit: cover; /* This ensures the image covers the area without distorting its aspect ratio */
+}
 
 
 
