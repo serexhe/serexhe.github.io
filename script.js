@@ -7,5 +7,5 @@ image.addEventListener('mouseenter', function() {
 image.addEventListener('mouseleave', function() {
   setTimeout(() => {
     this.classList.remove('hover');
-  }, 1500); // Match the transition duration
+  }, 1000); // Match the transition duration
 });
