@@ -47,7 +47,7 @@ body {
     opacity: 0;
 }
 
-.fixed-element-2.hover:after {
+.fixed-element-2.hover: {
     opacity: 0,5;
 }
 
