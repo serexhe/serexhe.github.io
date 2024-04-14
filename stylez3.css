@@ -92,11 +92,11 @@ body {
     opacity: 0;
 }
 
-.image-container-1:hover:after {
+.image-container-1.hover:after {
     opacity: 1;
 }
 
-.image-container-1:hover:before {
+.image-container-1.hover:before {
     opacity: 0;
 }
 
