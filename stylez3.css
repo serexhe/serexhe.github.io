@@ -28,7 +28,56 @@ body {
 
 
 
+
+
 .fixed-element-2 {
+    position: fixed;
+    top: 37%;
+    left: 72%;
+    z-index: 2;
+    width: 100%;
+    height: 100%; /* Ensure the div has a height */
+    display: flex; /* Center the img */
+    justify-content: center;
+    align-items: center;
+}
+
+.fixed-element-2:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('assetz2/10000.png');
+    background-size: cover;
+    z-index: -1; /* Ensure the img is on top */
+}
+
+.fixed-element-2:after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('assetz2/10000b.png');
+    background-size: cover;
+    opacity: 0;
+    transition: opacity 1s ease;
+    z-index: -1; /* Ensure the img is on top */
+}
+
+.fixed-element-2.hover:after {
+    opacity: 1;
+}
+
+
+
+
+
+
+.fixed-element-2XXX {
     position: fixed;
     top: 37%;
     left: 72%;
@@ -37,17 +86,17 @@ body {
 
 }
 
-.fixed-element-2:before {
+.fixed-element-2XXX:before {
     background-image: url('assetz2/10000.png');
     background-size: cover;
 }
-.fixed-element-2:after {
+.fixed-element-2XXX:after {
     background-image: url('assetz2/10000b.png');
     background-size: cover;
     opacity: 0;
 }
 
-.fixed-element-2.hover: {
+.fixed-element-2XXX.hover: {
     opacity: 0,5;
 }
 
