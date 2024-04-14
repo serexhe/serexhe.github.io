@@ -35,24 +35,6 @@ body {
     width: 100%;
   }
 
-  .clickable-image {
-    position: fixed;
-    top: 37%;
-    left: 72%;
-    z-index: 2;
-    width: 100%;
-    height: 100%; /* Adjust as needed */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-
-.image-area {
-    width: 100px; /* Adjust the size as needed */
-    height: 100px; /* Adjust the size as needed */
-    background-image: url('assetz2/10000.png');
-    background-size: cover;
-    cursor: pointer; /* Change the cursor to indicate it's clickable */
 
 
 
