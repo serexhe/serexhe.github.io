@@ -12,18 +12,17 @@ body {
   }
   
 
-.fixed-element img,
-.flex-container img {
-    width: 100vw; /* 100% of the viewport width */
-    height: 100vh; /* 100% of the viewport height */
-    object-fit: cover; /* Ensures the image covers the area without distorting its aspect ratio */
-}
+  .flex-container img {
+    flex: 0 0 auto;
+    width: 100%;
+  }
 
   .fixed-element {
     position: fixed;
     top: 0px;
     left: 0px;
     z-index: 1;
+    width: 80%;
   }
 
   .fixed-element-2 {
