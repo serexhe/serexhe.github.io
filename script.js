@@ -1,4 +1,4 @@
-const images = document.querySelectorAll('.image-container-1, .image-container-2');
+const images = document.querySelectorAll('.image-container-1, .image-container-2, .fixed-element-2');
 
 images.forEach(image => {
  image.addEventListener('mouseenter', function() {
