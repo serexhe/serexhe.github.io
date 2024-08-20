@@ -34,8 +34,8 @@ body {
   .fixed-element666 {
     position: fixed;
     bottom: 15%;
-    right: 50%;
-    z-index: 2;
+    right: 90%;
+    z-index: 3;
     width: 20%;
   }
 
