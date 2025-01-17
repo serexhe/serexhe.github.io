@@ -3,21 +3,6 @@ body {
     padding: 0;
   }
 
-
-
-a {
-    text-decoration: none; /* Remove underlines */
-    margin: 0; /* Reset any default margin */
-    padding: 0; /* Reset any default padding */
-    display: inline-block; /* Ensure it behaves like a block to remove inline gaps */
-}
-
-img {
-    display: block; /* Prevent gaps between images */
-}
-
-
-
 .flex-container {
     display: flex;
     flex-direction: column;
