@@ -21,6 +21,10 @@ a {
   .flex-container img {
     flex: 0 0 auto;
     width: 100%;
+          display: block; /* Ensures no inline gaps around the image */
+    margin: 0; /* Removes any default margins */
+    padding: 0; /* Removes any default padding */
+    border: 0; /* Ensures no border */
   }
 
   .fixed-element {
