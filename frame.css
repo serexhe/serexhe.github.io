@@ -3,6 +3,13 @@ body {
     padding: 0;
   }
 
+a {
+    text-decoration: none; /* Removes underlines */
+    display: block; /* Prevents inline behavior */
+    margin: 0; /* Removes any gaps caused by margins */
+    padding: 0; /* Removes any gaps caused by padding */
+}
+
 .flex-container {
     display: flex;
     flex-direction: column;
