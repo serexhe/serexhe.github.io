@@ -1,58 +1,45 @@
-html,
 body {
     margin: 0;
     padding: 0;
-    height: 100%; /* Use the entire viewport */
-    overflow: hidden; /* Prevent scrolling */
-}
+  }
 
 .flex-container {
     display: flex;
     flex-direction: column;
     flex-wrap: nowrap;
-    overflow: hidden; /* Prevent unintended scrolling */
-    height: 100vh; /* Full viewport height */
-    box-sizing: border-box; /* Include padding/margin in calculations */
-}
+    overflow-y: auto;
+    z-index: 0;
+  }
+  
+  .flex-container img {
+    flex: 0 0 auto;
+    width: 100%;
+  }
 
-.flex-container img {
-    flex: 1 1 auto; /* Ensure images scale properly */
-    width: 100%; /* Full width */
-    height: auto; /* Maintain aspect ratio */
-    display: block; /* Prevent inline gaps */
-}
-
-a,
-img {
-    margin: 0;
-    padding: 0;
-    border: 0; /* Ensure no border around links or images */
-    display: block; /* Prevent inline gaps */
-}
-
-.fixed-element {
+  .fixed-element {
     position: fixed;
     top: 20px;
     left: 20px;
     z-index: 1;
-}
+  }
 
-.fixed-element2 {
+  .fixed-element2 {
     position: fixed;
     top: 15%;
     left: 50%;
     z-index: 2;
     width: 20%;
-}
+  }
 
-.fixed-element666 {
+  .fixed-element666 {
     position: fixed;
     bottom: 15%;
     right: 90%;
     z-index: 3;
     width: 20%;
-}
+  }
 
-.center {
+  .center {
     margin: auto;
-}
+    
+  }
