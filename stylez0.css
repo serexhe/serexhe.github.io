@@ -151,13 +151,13 @@ figcaption.dark {
 }
 
 ::selection {
-    background-color: #ab00ff;
+    background-color: #de9bff;
     color: white;
     /* optional: ensures text is readable */
 }
 
 /* For Firefox */
 ::-moz-selection {
-    background-color: #ab00ff;
+    background-color: #de9bff;
     color: white;
 }
