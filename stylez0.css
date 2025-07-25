@@ -77,22 +77,13 @@ figcaption.dark {
     /* No padding-left here so plain text lines align perfectly */
 }
 
-/* Remove old inline arrow styles (delete this from your CSS if present):
-.text-section ul li a .arrow {
-    color: #54ff00;
-    font-weight: bold;
-    font-size: 1.1em;
-    margin-left: 6px;
-}
-*/
-
 /* Links with arrow on right, no layout shift */
 .link-with-arrow {
     position: relative;
     padding-right: 20px; /* space for arrow */
     color: inherit;
     text-decoration: none;
-    transition: color 0.3s ease;
+/*    transition: color 0.3s ease; */
 }
 
 .link-with-arrow::after {
@@ -105,14 +96,14 @@ figcaption.dark {
     font-weight: bold;
     font-size: 1.1em;
     pointer-events: none;
-    transition: color 0.3s ease;
+/*    transition: color 0.3s ease; */
 }
 
 .link-with-arrow:hover,
 .link-with-arrow:focus,
 .link-with-arrow:hover::after,
 .link-with-arrow:focus::after {
-    color: #54ff00; /* darker green on hover */
+    color: #54ff00; /* hover */
     cursor: pointer;
 }
 
@@ -120,7 +111,7 @@ figcaption.dark {
 .mailto-link {
     color: inherit;
     text-decoration: none;
-    transition: color 0.3s ease;
+/*    transition: color 0.3s ease; */
 }
 
 .mailto-link:hover,
