@@ -70,6 +70,24 @@ figcaption.dark {
     padding-left: 0;
 }
 
+.text-section ul li a {
+    position: relative;
+    color: inherit;
+    text-decoration: none;
+    padding-left: 20px; /* space for the arrow */
+  }
+  
+  .text-section ul li a::before {
+    content: '→';
+    position: absolute;
+    left: 0;
+    color: #4CAF50;
+    font-weight: bold;
+    font-size: 1.1em;
+    top: 0;
+    line-height: 1;
+  }  
+
 .text-section p,
 .text-section li {
     margin-bottom: 0.5em;
