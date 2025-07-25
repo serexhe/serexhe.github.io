@@ -51,6 +51,7 @@ figcaption.dark {
 
 /* Reference + Impressum sections */
 .text-section {
+    position: relative; /* for arrow positioning inside links */
     background: white;
     color: black;
     padding: 40px 20px;
@@ -63,32 +64,38 @@ figcaption.dark {
     font-weight: bold;
     font-size: 1em;
     margin-bottom: 1em;
+    padding-left: 0;
 }
 
 .text-section ul {
     list-style: none;
     padding-left: 0;
+    margin-left: 0;
 }
 
 .text-section ul li {
-    position: relative;
-    padding-left: 20px; /* Align all list items */
+    position: relative; /* for arrow positioning */
+    padding-left: 0;
+    margin-bottom: 0.5em;
 }
 
 .text-section ul li a {
-    position: relative;
     color: inherit;
     text-decoration: none;
-    padding-left: 0; /* Remove extra padding inside link */
+    display: block;       /* whole line clickable */
+    padding-right: 20px;  /* space for arrow on right */
 }
 
 .text-section ul li a::after {
     content: '→';
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
     color: #4CAF50;
     font-weight: bold;
     font-size: 1.1em;
-    margin-left: 6px;
-    vertical-align: middle;
+    pointer-events: none;
 }
 
 .text-section p,
