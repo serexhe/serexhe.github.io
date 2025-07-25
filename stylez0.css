@@ -93,7 +93,7 @@ figcaption.dark {
     top: 50%;
     transform: translateY(-50%);
     color: #54ff00; /* base green */
-    font-weight: bold;
+/*    font-weight: bold; */
     font-size: 1.1em;
     pointer-events: none;
 /*    transition: color 0.3s ease; */
