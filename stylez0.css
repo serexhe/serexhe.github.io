@@ -49,56 +49,48 @@ figcaption.dark {
     background-color: rgba(255, 255, 255, 0.4);
 }
 
-/* Wrap all text sections here for consistent left alignment and max width */
-.text-wrapper {
-    max-width: 600px;
+/* Reference + Impressum sections */
+.text-section {
+    background: white;
+    color: black;
     padding: 40px 20px;
-    margin: 0 auto;
+    max-width: 600px;    /* fixed max width for all text blocks */
+    margin: 0 auto;      /* center horizontally */
     box-sizing: border-box;
 }
 
-/* All text-sections inside the wrapper will fill the container width */
-.text-wrapper .text-section {
-    background: white;
-    color: black;
-    margin-bottom: 40px; /* spacing between text sections */
-}
-
-.text-wrapper .text-section h2 {
+.text-section h2 {
     font-weight: bold;
     font-size: 1em;
     margin-bottom: 1em;
 }
 
-.text-wrapper .text-section ul {
+.text-section ul {
     list-style: none;
     padding-left: 0;
 }
 
-.text-wrapper .text-section ul li {
+.text-section ul li {
     position: relative;
 }
 
-.text-wrapper .text-section ul li a {
+.text-section ul li a {
     position: relative;
     color: inherit;
     text-decoration: none;
-    padding-left: 20px; /* space for arrow */
+    padding-left: 20px; /* space for the arrow */
 }
 
-.text-wrapper .text-section ul li a::after {
+.text-section ul li a::after {
     content: '→';
     color: #4CAF50;
     font-weight: bold;
     font-size: 1.1em;
-    position: absolute;
-    right: 0;
-    top: 50%;
-    transform: translateY(-50%);
+    margin-left: 6px;
 }
 
-.text-wrapper .text-section p,
-.text-wrapper .text-section li {
+.text-section p,
+.text-section li {
     margin-bottom: 0.5em;
 }
 
