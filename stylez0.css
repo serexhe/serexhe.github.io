@@ -70,27 +70,25 @@ figcaption.dark {
     padding-left: 0;
 }
 
-.text-section ul li a {
+/* FIXED: consistent spacing + arrow only on links */
+.text-section ul li {
     position: relative;
+    padding-left: 20px; /* space for arrow for all list items */
+}
+
+.text-section ul li a {
     color: inherit;
     text-decoration: none;
-    padding-left: 20px; /* space for the arrow */
-  }
-  
-  .text-section ul li::after {
-    content: '';
-    display: inline-block;
-    margin-left: 6px;
-  }
-  
-  .text-section ul li a::after {
+}
+
+.text-section ul li a::after {
     content: '->';
     color: #4CAF50;
     font-weight: bold;
     font-size: 1.1em;
     margin-left: 6px;
-  }  
-  
+}
+
 .text-section p,
 .text-section li {
     margin-bottom: 0.5em;
