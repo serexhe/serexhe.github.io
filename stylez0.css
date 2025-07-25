@@ -77,17 +77,15 @@ figcaption.dark {
     padding-left: 20px; /* space for the arrow */
   }
   
-  .text-section ul li a::before {
-    content: '→';
-    position: absolute;
-    left: 0;
-    color: #4CAF50;
+  .text-section ul li a::after {
+    content: ' ->';
+    color: #4CAF50; /* same green as before */
     font-weight: bold;
     font-size: 1.1em;
-    top: 0;
     line-height: 1;
-  }  
-
+    margin-left: 6px; /* spacing between text and arrow */
+  }
+  
 .text-section p,
 .text-section li {
     margin-bottom: 0.5em;
