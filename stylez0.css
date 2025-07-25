@@ -77,20 +77,56 @@ figcaption.dark {
     /* No padding-left here so plain text lines align perfectly */
 }
 
-/* Style links so they look like normal text, no padding/margin left */
-.text-section ul li a {
-    color: inherit;
-    text-decoration: none;
-    position: relative;
-    /* no padding-left to keep alignment */
-}
-
-/* Inline arrow, separated from link text */
+/* Remove old inline arrow styles (delete this from your CSS if present):
 .text-section ul li a .arrow {
     color: #4CAF50;
     font-weight: bold;
     font-size: 1.1em;
     margin-left: 6px;
+}
+*/
+
+/* Links with arrow on right, no layout shift */
+.link-with-arrow {
+    position: relative;
+    padding-right: 20px; /* space for arrow */
+    color: inherit;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.link-with-arrow::after {
+    content: '➔'; /* arrow symbol */
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #4CAF50; /* base green */
+    font-weight: bold;
+    font-size: 1.1em;
+    pointer-events: none;
+    transition: color 0.3s ease;
+}
+
+.link-with-arrow:hover,
+.link-with-arrow:focus,
+.link-with-arrow:hover::after,
+.link-with-arrow:focus::after {
+    color: #2a8f2a; /* darker green on hover */
+    cursor: pointer;
+}
+
+/* Mailto link at bottom */
+.mailto-link {
+    color: inherit;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.mailto-link:hover,
+.mailto-link:focus {
+    color: #2a8f2a;
+    cursor: pointer;
 }
 
 /* Paragraph and list items margin bottom */
@@ -104,6 +140,7 @@ figcaption.dark {
     left: 20px;
     z-index: 10;
 }
+
 .visually-hidden {
     border: 0 !important;
     clip: rect(1px, 1px, 1px, 1px);
@@ -115,50 +152,4 @@ figcaption.dark {
     position: absolute !important;
     width: 1px !important;
     white-space: nowrap !important;
-  }
-  
-
-/* Wrap links that need arrows with this class, or apply this to all links you want arrow */
-.link-with-arrow {
-    position: relative;
-    padding-right: 20px; /* space for the arrow */
-    color: inherit; /* keep base color */
-    text-decoration: none; /* no underline */
-    transition: color 0.3s ease;
-}
-
-/* Arrow using ::after pseudo-element — doesn't push text */
-.link-with-arrow::after {
-    content: '➔'; /* your arrow */
-    position: absolute;
-    right: 0;
-    top: 50%;
-    transform: translateY(-50%);
-    color: #4CAF50; /* base green */
-    font-weight: bold;
-    font-size: 1.1em;
-    pointer-events: none;
-    transition: color 0.3s ease;
-}
-
-/* On hover, link text and arrow turn green */
-.link-with-arrow:hover,
-.link-with-arrow:focus,
-.link-with-arrow:hover::after,
-.link-with-arrow:focus::after {
-    color: #4CAF50;
-    cursor: pointer;
-}
-
-/* Mailto link styling */
-.mailto-link {
-    color: inherit;
-    text-decoration: none;
-    transition: color 0.3s ease;
-}
-
-.mailto-link:hover,
-.mailto-link:focus {
-    color: #4CAF50; /* same hover green */
-    cursor: pointer;
 }
