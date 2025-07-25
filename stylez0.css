@@ -79,7 +79,7 @@ figcaption.dark {
 
 /* Remove old inline arrow styles (delete this from your CSS if present):
 .text-section ul li a .arrow {
-    color: #4CAF50;
+    color: #54ff00;
     font-weight: bold;
     font-size: 1.1em;
     margin-left: 6px;
@@ -101,7 +101,7 @@ figcaption.dark {
     right: 0;
     top: 50%;
     transform: translateY(-50%);
-    color: #4CAF50; /* base green */
+    color: #54ff00; /* base green */
     font-weight: bold;
     font-size: 1.1em;
     pointer-events: none;
@@ -112,7 +112,7 @@ figcaption.dark {
 .link-with-arrow:focus,
 .link-with-arrow:hover::after,
 .link-with-arrow:focus::after {
-    color: #2a8f2a; /* darker green on hover */
+    color: #54ff00; /* darker green on hover */
     cursor: pointer;
 }
 
@@ -125,7 +125,7 @@ figcaption.dark {
 
 .mailto-link:hover,
 .mailto-link:focus {
-    color: #2a8f2a;
+    color: #54ff00;
     cursor: pointer;
 }
 
