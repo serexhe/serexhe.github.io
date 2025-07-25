@@ -117,3 +117,48 @@ figcaption.dark {
     white-space: nowrap !important;
   }
   
+
+/* Wrap links that need arrows with this class, or apply this to all links you want arrow */
+.link-with-arrow {
+    position: relative;
+    padding-right: 20px; /* space for the arrow */
+    color: inherit; /* keep base color */
+    text-decoration: none; /* no underline */
+    transition: color 0.3s ease;
+}
+
+/* Arrow using ::after pseudo-element — doesn't push text */
+.link-with-arrow::after {
+    content: '➔'; /* your arrow */
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #4CAF50; /* base green */
+    font-weight: bold;
+    font-size: 1.1em;
+    pointer-events: none;
+    transition: color 0.3s ease;
+}
+
+/* On hover, link text and arrow turn green */
+.link-with-arrow:hover,
+.link-with-arrow:focus,
+.link-with-arrow:hover::after,
+.link-with-arrow:focus::after {
+    color: #4CAF50;
+    cursor: pointer;
+}
+
+/* Mailto link styling */
+.mailto-link {
+    color: inherit;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.mailto-link:hover,
+.mailto-link:focus {
+    color: #4CAF50; /* same hover green */
+    cursor: pointer;
+}
