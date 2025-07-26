@@ -18,12 +18,46 @@ body {
     margin: 0;
 }
 
-.flex-container img {
+/*.flex-container img {
     flex: 0 0 auto;
     width: 100%;
     height: auto;    
     display: block;
-}
+} */
+
+.flex-container figure .image-wrapper {
+    position: relative;
+    display: block;
+    width: 100%;
+    max-width: 100%; /* or your max width */
+  }
+  
+  .flex-container figure .image-wrapper .blur-up {
+    display: block;
+    filter: blur(20px);
+    transform: scale(1.05);
+    transition: opacity 0.4s ease;
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%;
+    height: auto;
+    will-change: opacity;
+    opacity: 1;
+  }
+  
+  .flex-container figure .image-wrapper .full-image {
+    display: block;
+    width: 100%;
+    height: auto;
+    position: relative;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+  }
+  
+  .flex-container figure .image-wrapper .full-image.loaded {
+    opacity: 1;
+  }
+  
 
 /* Caption styles */
 figcaption {

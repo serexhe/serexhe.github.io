@@ -23,3 +23,13 @@ window.addEventListener('beforeunload', () => {
     }
   });
   
+  document.querySelectorAll('.image-wrapper .full-image').forEach(img => {
+    if (img.complete) {
+      img.classList.add('loaded'); // if cached
+    } else {
+      img.addEventListener('load', () => {
+        img.classList.add('loaded');
+      });
+    }
+  });
+    
