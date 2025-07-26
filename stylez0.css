@@ -128,6 +128,7 @@ cursor: pointer;
     z-index: 10;
 }
 
+/* ex-H1 */
 .visually-hidden {
     border: 0 !important;
     clip: rect(1px, 1px, 1px, 1px);
