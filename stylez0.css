@@ -44,11 +44,6 @@ body {
     will-change: opacity;
     opacity: 1;
   }
-
-  .image-wrapper .full-image.loaded + .blur-up {
-    opacity: 0;
-    transition: opacity 0.4s ease;
-  }
   
   .flex-container figure .image-wrapper .full-image {
     display: block;
@@ -61,6 +56,11 @@ body {
   
   .flex-container figure .image-wrapper .full-image.loaded {
     opacity: 1;
+  }
+
+  .image-wrapper .full-image.loaded + .blur-up {
+    opacity: 0;
+    transition: opacity 0.4s ease;
   }
   
 
