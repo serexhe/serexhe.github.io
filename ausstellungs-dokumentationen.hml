@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
+  <title>Anatole Serexhe – Ausstellungs-Dokumentationen</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet" />
+  <meta name="description" content="Fotografie für Museen, Theater, Ausstellungen, Öffentlichkeitsarbeit, Kataloge und Archive – von Anatole Serexhe, Köln." />
+  <link rel="stylesheet" href="stylez0.css" />
+  <link rel="icon" type="image/png" sizes="32x32" href="faviconserexhe.ico">
+  <script src="main.js" defer></script>
+</head>
+
+<body>
+
+  <div class="fixed-element">
+    <img src="assetz2/logo_zurueck.png" alt="Close Tab" style="cursor: pointer;" onclick="window.close();"width="200" />
+  </div>
+
+  <div class="flex-container">
+
+    <figure>
+      <img src="assetz2/1.jpg" alt="Mikroskopaufnahme" />
+      <figcaption class="caption dark"></figcaption>
+    </figure>
+
+    <figure>
+      <img src="assetz2/2.jpg" alt="Peter Vogel - Trommel" loading="lazy" />
+      <figcaption class="caption bright">Peter Vogel, Trommel</figcaption>
+    </figure>
+
+    <figure>
+      <img src="assetz2/5.jpg" alt="Thobias Piero Dohm" loading="lazy" />
+      <figcaption class="caption dark">Thobias Piero Dohm, Spacetime – La Nuit du Cirque 2024</figcaption>
+    </figure>
+
+    <section class="text-section" aria-label="Ausstellungs-Dokumentationen">
+      <h1>Ausstellungs-Dokumentationen</h1>
+    </section>
+
+    <figure>
+      <img src="assetz2/2.jpg" alt="Peter Vogel - Trommel" loading="lazy" />
+      <figcaption class="caption bright">Peter Vogel, Trommel</figcaption>
+    </figure>
+
+
+    <figure>
+      <img src="assetz2/4.jpg" alt="Christina Garrido - JWIITMTESDSA?, Tallinn 2017" loading="lazy" />
+      <figcaption class="caption bright">Christina Garrido, JWIITMTESDSA? - Tallinn 2017</figcaption>
+    </figure>
+
+    <section class="text-section" aria-label="Auswahl Ausstellungsdokumentation">
+      <h2>Ausstellungsdokumentation</h2>
+      <ul>
+        <li>Auswahl:</li>
+        <li><a href="https://gautel.net/jakob/spip.php?page=article&id_article=952" target="_blank" rel="noopener noreferrer" class="link-with-arrow">Tout autour de Babel - Jakob Gautel, Maison de l’Architecture, Poitiers (FR), 2009</a></li>
+        <li><a href="https://art-meets-science.io/" target="_blank" rel="noopener noreferrer" class="link-with-arrow">Herbert W. Franke - Werkdokumentation im Atellier in Egling, 2011</a></li>
+        <li><a href="https://jsfoundation.art/exhibitions/high-performance-zeitbasierte-medienkunst-seit-1996/" target="_blank" rel="noopener noreferrer" class="link-with-arrow">High Performance - Julia Stoshek Collection/ZKM, 2014</a></li>
+        <li><a href="https://zkm.de/de/ausstellung/2017/05/infosphaere" target="_blank" rel="noopener noreferrer" class="link-with-arrow">Infosphere - ZKM, 2015</a></li> 
+      </ul>
+    </section>
+
+    <figure>
+      <img src="assetz2/3.jpg" alt="NRW Forum Düsseldorf 2019" loading="lazy" />
+      <figcaption class="caption dark">Humarithm - NRW Forum Düsseldorf 2019</figcaption>
+    </figure>
+
+    <figure>
+      <img src="assetz2/3.jpg" alt="NRW Forum Düsseldorf 2019" loading="lazy" />
+      <figcaption class="caption dark">Humarithm - NRW Forum Düsseldorf 2019</figcaption>
+    </figure>
+
+    <section class="text-section" aria-label="Impressum">
+      <h2>IMPRESSUM</h2>
+      <ul>
+        <li>Verantwortlich: Anatole Serexhe</li>
+        <li>E-Mail: <a href="mailto:anatole@serexhe.de" class="mailto-link">anatole@serexhe.de</a></li>
+        <li>Für Inhalte verlinkter Seiten Dritter wird keine Verantwortung übernommen.</li>
+        </ul>
+    </section>
+
+  </div>
+</body>
+</html>
