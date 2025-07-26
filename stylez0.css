@@ -79,7 +79,7 @@ figcaption.dark {
 }
 
 /* Links with arrow on right, no layout shift */
-.link-with-arrow {
+/*.link-with-arrow {
     position: relative;
     padding-right: 20px;
     /* space for arrow */
@@ -101,7 +101,23 @@ figcaption.dark {
     font-size: 1.1em;
     pointer-events: none;
     /*    transition: color 0.3s ease; */
+} */
+
+.link-with-arrow {
+    color: inherit;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.3em; /* space between text and arrow */
 }
+
+.link-with-arrow::after {
+    content: '➔';
+    color: #54ff00;
+    font-size: 1.1em;
+    line-height: 1;
+}
+
 
 .link-with-arrow:hover,
 .link-with-arrow:focus,
