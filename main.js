@@ -1,22 +1,25 @@
+// Save scroll position before leaving
+window.addEventListener('beforeunload', () => {
+    // Only save if on main page
+    if (location.pathname === '/index.html' || location.pathname === '/') {
+      sessionStorage.setItem('scrollY', window.scrollY);
+    }
+  });
   
+  // Restore scroll only if returning to main page
   window.addEventListener('DOMContentLoaded', () => {
     const scrollY = sessionStorage.getItem('scrollY');
     const referrer = document.referrer;
   
-    // Only restore if the user came from another page of your site
-    if (scrollY && referrer.includes(location.hostname)) {
-      // Delay until all images and content are loaded
-      window.addEventListener('load', () => {
-        window.scrollTo(0, parseInt(scrollY, 10));
-        sessionStorage.removeItem('scrollY');
-      });
+    if (
+      scrollY &&
+      referrer.includes(location.hostname) &&
+      (location.pathname === '/index.html' || location.pathname === '/')
+    ) {
+      window.scrollTo(0, parseInt(scrollY, 10));
+      sessionStorage.removeItem('scrollY');
     } else {
-      // Optional: remove old scroll data if reload or direct access
       sessionStorage.removeItem('scrollY');
     }
   });
   
-  // Save scroll when leaving
-  window.addEventListener('beforeunload', () => {
-    sessionStorage.setItem('scrollY', window.scrollY);
-  });
