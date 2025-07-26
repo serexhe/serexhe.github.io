@@ -18,12 +18,12 @@ body {
     margin: 0;
 }
 
-/*.flex-container img {
+.flex-container img {
     flex: 0 0 auto;
     width: 100%;
     height: auto;    
     display: block;
-} */
+} 
 
 .flex-container figure .image-wrapper {
     position: relative;
