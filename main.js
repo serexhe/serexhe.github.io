@@ -1,13 +1,17 @@
-
-  // Restore scroll immediately if from same site
-window.addEventListener('DOMContentLoaded', () => {
+  
+  window.addEventListener('DOMContentLoaded', () => {
     const scrollY = sessionStorage.getItem('scrollY');
     const referrer = document.referrer;
   
+    // Only restore if the user came from another page of your site
     if (scrollY && referrer.includes(location.hostname)) {
-      window.scrollTo(0, parseInt(scrollY, 10));
-      sessionStorage.removeItem('scrollY');
+      // Delay until all images and content are loaded
+      window.addEventListener('load', () => {
+        window.scrollTo(0, parseInt(scrollY, 10));
+        sessionStorage.removeItem('scrollY');
+      });
     } else {
+      // Optional: remove old scroll data if reload or direct access
       sessionStorage.removeItem('scrollY');
     }
   });
@@ -16,4 +20,3 @@ window.addEventListener('DOMContentLoaded', () => {
   window.addEventListener('beforeunload', () => {
     sessionStorage.setItem('scrollY', window.scrollY);
   });
-  
