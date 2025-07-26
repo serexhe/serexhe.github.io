@@ -100,8 +100,7 @@ figcaption.dark {
 .link-with-arrow:hover::after,
 .link-with-arrow:focus::after {
     color: #54ff00;
-    /* hover */
-    /*    cursor: pointer; */
+ cursor: pointer;
 }
 
 /* Mailto link at bottom */
@@ -114,7 +113,7 @@ figcaption.dark {
 .mailto-link:hover,
 .mailto-link:focus {
     color: #54ff00;
-    /*    cursor: pointer; */
+cursor: pointer;
 }
 
 /* Paragraph and list items margin bottom */
