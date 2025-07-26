@@ -78,20 +78,28 @@ figcaption.dark {
     /* No padding-left here so plain text lines align perfectly */
 }
 
+
 .link-with-arrow {
     color: inherit;
     text-decoration: none;
     display: inline-flex;
-    align-items: center;
-    gap: 0.6em; /* space between text and arrow */
-}
-
-.link-with-arrow::after {
+    align-items: baseline;
+    gap: 0.4em; /* spacing between text and arrow */
+  }
+  
+  .link-with-arrow::after {
     content: '➔';
     color: #54ff00;
     font-size: 1.1em;
     line-height: 1;
-}
+  }
+  
+  .link-with-arrow:hover,
+  .link-with-arrow:focus {
+    color: #54ff00;
+    text-decoration: none;
+  }
+  
 
 
 .link-with-arrow:hover,
