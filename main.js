@@ -1,16 +1,10 @@
-// Save scroll position before leaving
-window.addEventListener('beforeunload', () => {
-    // Only save if on main page
-    if (location.pathname === '/index.html' || location.pathname === '/') {
-      sessionStorage.setItem('scrollY', window.scrollY);
-    }
-  });
+// Wrap everything inside DOMContentLoaded for safe execution
+document.addEventListener('DOMContentLoaded', () => {
   
-  // Restore scroll only if returning to main page
-  window.addEventListener('DOMContentLoaded', () => {
+    // Restore scroll only if returning to main page
     const scrollY = sessionStorage.getItem('scrollY');
     const referrer = document.referrer;
-  
+    
     if (
       scrollY &&
       referrer.includes(location.hostname) &&
@@ -21,15 +15,25 @@ window.addEventListener('beforeunload', () => {
     } else {
       sessionStorage.removeItem('scrollY');
     }
+    
+    // Fade in full images with blur-up effect
+    document.querySelectorAll('.image-wrapper .full-image').forEach(img => {
+      if (img.complete) {
+        img.classList.add('loaded'); // if cached, show immediately
+      } else {
+        img.addEventListener('load', () => {
+          img.classList.add('loaded');
+        });
+      }
+    });
+  
   });
   
-  document.querySelectorAll('.image-wrapper .full-image').forEach(img => {
-    if (img.complete) {
-      img.classList.add('loaded'); // if cached
-    } else {
-      img.addEventListener('load', () => {
-        img.classList.add('loaded');
-      });
+  // Save scroll position before leaving (outside DOMContentLoaded)
+  window.addEventListener('beforeunload', () => {
+    // Only save if on main page
+    if (location.pathname === '/index.html' || location.pathname === '/') {
+      sessionStorage.setItem('scrollY', window.scrollY);
     }
   });
-    
+  
