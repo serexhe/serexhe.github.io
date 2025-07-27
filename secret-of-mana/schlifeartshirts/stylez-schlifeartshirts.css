@@ -1,35 +1,43 @@
+/* Reset & basic layout */
 body {
     margin: 0;
     padding: 0;
+    font-family: sans-serif;
   }
   
-  .flex-container {
-    display: flex;
-    flex-direction: column;
-    flex-wrap: nowrap;
-    overflow-y: auto;
-    z-index: 0;
-  }
-  
-  .flex-container img {
-    flex: 0 0 auto;
-    width: 100%;
-  }
-  
+  /* Container for fixed header logo */
   .fixed-element {
     position: fixed;
     top: 0;
     left: 0;
-    z-index: 1;
     width: 100%;
+    z-index: 10;
   }
   
+  .fixed-element img {
+    width: 100%;
+    display: block;
+  }
+  
+  /* PayPal floating image */
   .fixed-element-2 {
     position: fixed;
     top: 37%;
     left: 72%;
-    z-index: 2;
+    z-index: 11;
+    width: 150px;
+  }
+  
+  .fixed-element-2 img {
     width: 100%;
+    display: block;
+  }
+  
+  /* Main content layout */
+  .flex-container {
+    display: flex;
+    flex-direction: column;
+    z-index: 1;
   }
   
   .image-row {
@@ -38,66 +46,43 @@ body {
     flex-wrap: wrap;
   }
   
-  /* ✨ Shared hover container style */
-  .image-container-1,
-  .image-container-2 {
+  /* Responsive containers for image transitions */
+  .image-container {
     position: relative;
     width: 50%;
     height: 100vh;
-    background-size: cover;
-    background-position: center;
     overflow: hidden;
   }
   
-  /* Pseudo-elements for hover effect */
-  .image-container-1::before,
-  .image-container-1::after,
-  .image-container-2::before,
-  .image-container-2::after {
-    content: "";
+  /* Both images are absolutely stacked */
+  .image-container img {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
+    object-fit: cover;
     transition: opacity 2s ease;
-    background-size: cover;
-    background-position: center;
   }
   
-  /* Background images for container 1 */
-  .image-container-1::before {
-    background-image: url('assetz-schlifeartshirts/b1.jpg');
-  }
-  
-  .image-container-1::after {
-    background-image: url('assetz-schlifeartshirts/b2.jpg');
-    opacity: 0;
-  }
-  
-  .image-container-1.hover::after {
+  /* Default image shown by default */
+  .image-default {
     opacity: 1;
+    z-index: 1;
   }
   
-  .image-container-1.hover::before {
+  /* Hover image hidden by default */
+  .image-hover {
+    opacity: 0;
+    z-index: 2;
+  }
+  
+  /* On hover: fade in hover image, fade out default */
+  .image-container.hover .image-default {
     opacity: 0;
   }
   
-  /* Background images for container 2 */
-  .image-container-2::before {
-    background-image: url('assetz-schlifeartshirts/c1.jpg');
-  }
-  
-  .image-container-2::after {
-    background-image: url('assetz-schlifeartshirts/c2.jpg');
-    opacity: 0;
-  }
-  
-  .image-container-2.hover::after {
+  .image-container.hover .image-hover {
     opacity: 1;
-  }
-  
-  .image-container-2.hover::before {
-    opacity: 0;
   }
   
