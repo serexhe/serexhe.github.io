@@ -28,43 +28,55 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    // References show more toggle
-    const showCount = 8; // Number of <li> to show initially
-    const items = document.querySelectorAll('li.more-reference');
+   // References show more toggle
+const showCount = 8;
+const items = document.querySelectorAll('li.more-reference');
 
-    if (items.length > showCount) {
-        // Hide items beyond showCount
+if (items.length > showCount) {
+    items.forEach((item, index) => {
+        if (index >= showCount) {
+            item.style.display = 'none';
+        }
+    });
+
+    const toggleText = document.createElement('span');
+    toggleText.textContent = 'Mehr anzeigen';
+    toggleText.style.cursor = 'pointer';
+    toggleText.style.color = '#54ff00';
+    toggleText.style.fontSize = 'inherit';
+    toggleText.style.userSelect = 'none';
+    toggleText.style.display = 'inline-block';
+    toggleText.style.margin = '10px 0';
+
+    let expanded = false;
+
+    toggleText.addEventListener('click', () => {
+        expanded = !expanded;
+
         items.forEach((item, index) => {
             if (index >= showCount) {
-                item.style.display = 'none';
+                item.style.display = expanded ? '' : 'none';
             }
         });
 
-        // Create toggle span element
-        const toggleText = document.createElement('span');
-        toggleText.textContent = 'Mehr anzeigen';
-        toggleText.style.cursor = 'pointer';
-        toggleText.style.color = '#54ff00'; // your standard green
-        toggleText.style.fontSize = 'inherit';
-        toggleText.style.userSelect = 'none';
-        toggleText.style.display = 'inline-block';
-        toggleText.style.margin = '10px 0';
+        toggleText.textContent = expanded ? 'Weniger anzeigen' : 'Mehr anzeigen';
 
-        let expanded = false;
-        toggleText.addEventListener('click', () => {
-            expanded = !expanded;
-            items.forEach((item, index) => {
-                if (index >= showCount) {
-                    item.style.display = expanded ? '' : 'none'; // '' restores default
-                }
-            });
-            toggleText.textContent = expanded ? 'Weniger anzeigen' : 'Mehr anzeigen';
-        });
+        // Move the toggle to the new position
+        const referenceList = toggleText.closest('ul');
+        if (expanded) {
+            referenceList.appendChild(toggleText); // move to end
+        } else {
+            // place after the last initially visible <li>
+            const lastVisibleItem = items[showCount - 1];
+            lastVisibleItem.parentNode.insertBefore(toggleText, lastVisibleItem.nextSibling);
+        }
+    });
 
-        // Insert toggle after the last initially visible <li>
-        const lastVisibleItem = items[showCount - 1];
-        lastVisibleItem.parentNode.insertBefore(toggleText, lastVisibleItem.nextSibling);
-    }
+    // Initial placement after 8th item
+    const lastVisibleItem = items[showCount - 1];
+    lastVisibleItem.parentNode.insertBefore(toggleText, lastVisibleItem.nextSibling);
+}
+
 
 });
 
