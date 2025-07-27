@@ -34,7 +34,7 @@ body {
   
   .image-wrapper .blur-up {
     display: block;
-    filter: blur(10px);
+    filter: blur(1px);
     transform: scale(1.05);
     transition: opacity 0.1s ease;
     position: absolute;
