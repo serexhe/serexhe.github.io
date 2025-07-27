@@ -2,8 +2,8 @@ body {
     margin: 0;
     padding: 0;
   }
-
-.flex-container {
+  
+  .flex-container {
     display: flex;
     flex-direction: column;
     flex-wrap: nowrap;
@@ -11,22 +11,19 @@ body {
     z-index: 0;
   }
   
-
   .flex-container img {
     flex: 0 0 auto;
     width: 100%;
   }
-
+  
   .fixed-element {
     position: fixed;
-    top: 0px;
-    left: 0px;
+    top: 0;
+    left: 0;
     z-index: 1;
     width: 100%;
   }
-
-
-
+  
   .fixed-element-2 {
     position: fixed;
     top: 37%;
@@ -34,155 +31,73 @@ body {
     z-index: 2;
     width: 100%;
   }
-
-
-
-
-  .center {
-    margin: auto;
-    
-  }
-
-
-
-.image-row {
+  
+  .image-row {
     display: flex;
-    justify-content: space-between; /* Adjust spacing between images as needed */
+    justify-content: space-between;
     flex-wrap: wrap;
-}
-
-
-
-
-
-
-.image-container-1 img {
-    width: 100%;
-    height: 100vh; /* vh stands for viewport height */
-    object-fit: cover; /* This ensures the image covers the area without distorting its aspect ratio */
-}
-
-.image-container-2 img {
-    width: 100%;
-    height: 100vh; /* vh stands for viewport height */
-    object-fit: cover; /* This ensures the image covers the area without distorting its aspect ratio */
-}
-
-
-
-.image-container-1 {
+  }
+  
+  /* ✨ Shared hover container style */
+  .image-container-1,
+  .image-container-2 {
     position: relative;
-    display: inline-block;
-}
-
-.image-container-1:before,
-.image-container-1:after {
+    width: 50%;
+    height: 100vh;
+    background-size: cover;
+    background-position: center;
+    overflow: hidden;
+  }
+  
+  /* Pseudo-elements for hover effect */
+  .image-container-1::before,
+  .image-container-1::after,
+  .image-container-2::before,
+  .image-container-2::after {
     content: "";
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    transition: opacity 2.0s ease;
-}
-
-.image-container-1:before {
+    transition: opacity 2s ease;
+    background-size: cover;
+    background-position: center;
+  }
+  
+  /* Background images for container 1 */
+  .image-container-1::before {
     background-image: url('assetz-schlifeartshirts/b1.jpg');
-    background-size: cover;
-}
-
-.image-container-1:after {
+  }
+  
+  .image-container-1::after {
     background-image: url('assetz-schlifeartshirts/b2.jpg');
-    background-size: cover;
     opacity: 0;
-}
-
-.image-container-1.hover:after {
+  }
+  
+  .image-container-1.hover::after {
     opacity: 1;
-}
-
-.image-container-1.hover:before {
+  }
+  
+  .image-container-1.hover::before {
     opacity: 0;
-}
-
-
-
-
-
-
-.image-container-2 {
-    position: relative;
-    display: inline-block;
-}
-
-.image-container-2:before,
-.image-container-2:after {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    transition: opacity 2.0s ease;
-}
-
-.image-container-2:before {
+  }
+  
+  /* Background images for container 2 */
+  .image-container-2::before {
     background-image: url('assetz-schlifeartshirts/c1.jpg');
-    background-size: cover;
-}
-
-.image-container-2:after {
+  }
+  
+  .image-container-2::after {
     background-image: url('assetz-schlifeartshirts/c2.jpg');
-    background-size: cover;
     opacity: 0;
-}
-
-.image-container-2.hover:after {
+  }
+  
+  .image-container-2.hover::after {
     opacity: 1;
-}
-
-.image-container-2.hover:before {
+  }
+  
+  .image-container-2.hover::before {
     opacity: 0;
-}
-
-
-
-
-
-
-
-.image-container-3 {
-   
-}
-
-.image-container-3:before,
-.image-container-3:after {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    transition: opacity 1.5s ease;
-}
-
-.image-container-3:before {
-    background-image: url('assetz-schlifeartshirts/10000.jpg');
-    background-size: cover;
-}
-
-.image-container-3:after {
-    background-image: url('assetz-schlifeartshirts/10000b.jpg');
-    background-size: cover;
-    opacity: 0;
-}
-
-.image-container-3:hover:after {
-    opacity: 1;
-}
-
-.image-container-3:hover:before {
-    opacity: 0;
-}
-
-
+  }
+  
