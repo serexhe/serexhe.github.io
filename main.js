@@ -28,42 +28,43 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    // References show more toggle
-    const showCount = 7; // number of items to show initially
-    const items = document.querySelectorAll('li.more-reference');
-    if (items.length > showCount) {
-        // Hide all items beyond showCount
+   // References show more toggle
+const showCount = 8; // number of items to show initially
+const items = document.querySelectorAll('li.more-reference');
+if (items.length > showCount) {
+    // Hide all items beyond showCount
+    items.forEach((item, index) => {
+        if (index >= showCount) {
+            item.style.display = 'none';
+        }
+    });
+
+    // Create toggle text element (like a link)
+    const toggleText = document.createElement('span');
+    toggleText.textContent = 'Mehr anzeigen';
+    toggleText.style.cursor = 'pointer';
+    toggleText.style.color = '#54ff00';   // your standard green
+    toggleText.style.fontSize = 'inherit'; // normal font size
+    toggleText.style.userSelect = 'none';  // optional: prevent text selection on click
+    toggleText.style.display = 'inline-block';
+    toggleText.style.margin = '10px 0';
+
+    let expanded = false;
+    toggleText.addEventListener('click', () => {
+        expanded = !expanded;
         items.forEach((item, index) => {
             if (index >= showCount) {
-                item.style.display = 'none';
+                item.style.display = expanded ? 'list-item' : 'none';
             }
         });
+        toggleText.textContent = expanded ? 'Weniger anzeigen' : 'Mehr anzeigen';
+    });
 
-        // Create toggle button
-        const btn = document.createElement('button');
-        btn.textContent = 'Mehr anzeigen';
-        btn.style.cursor = 'pointer';
-        btn.style.margin = '10px 0';
-        btn.style.background = 'none';
-        btn.style.border = 'none';
-        btn.style.color = '#54ff00';
-        btn.style.fontSize = '1em';
+    // Insert the toggle text after the last visible <li>
+    const lastVisibleItem = items[showCount - 1];
+    lastVisibleItem.parentNode.insertBefore(toggleText, lastVisibleItem.nextSibling);
+}
 
-        let expanded = false;
-        btn.addEventListener('click', () => {
-            expanded = !expanded;
-            items.forEach((item, index) => {
-                if (index >= showCount) {
-                    item.style.display = expanded ? 'list-item' : 'none';
-                }
-            });
-            btn.textContent = expanded ? 'Weniger anzeigen' : 'Mehr anzeigen';
-        });
-
-        // Insert the button after the last visible <li> (the showCount-1th)
-        const lastVisibleItem = items[showCount - 1];
-        lastVisibleItem.parentNode.insertBefore(btn, lastVisibleItem.nextSibling);
-    }
 
 });
 
