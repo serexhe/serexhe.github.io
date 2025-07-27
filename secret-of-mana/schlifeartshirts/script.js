@@ -14,3 +14,4 @@ document.addEventListener('DOMContentLoaded', () => {
    });
  });
  
+ console.log("Found images:", images.length);
