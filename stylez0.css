@@ -64,6 +64,9 @@ body {
     transition: opacity 0.4s ease;
   }
   
+  .blur-up {
+    pointer-events: none;
+  }
   
 
 /* Caption styles */
