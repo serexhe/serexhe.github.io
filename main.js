@@ -29,7 +29,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // References show more toggle
-    const showCount = 8; // number of items to show initially
+    const showCount = 7; // number of items to show initially
     const items = document.querySelectorAll('li.more-reference');
     if (items.length > showCount) {
         // Hide all items beyond showCount
