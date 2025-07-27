@@ -28,6 +28,42 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
+    // References show more toggle
+    const showCount = 8; // number of items to show initially
+    const items = document.querySelectorAll('li.more-reference');
+    if (items.length > showCount) {
+        // Hide all items beyond showCount
+        items.forEach((item, index) => {
+            if (index >= showCount) {
+                item.style.display = 'none';
+            }
+        });
+
+        // Create toggle button
+        const btn = document.createElement('button');
+        btn.textContent = 'Mehr anzeigen';
+        btn.style.cursor = 'pointer';
+        btn.style.margin = '10px 0';
+        btn.style.background = 'none';
+        btn.style.border = 'none';
+        btn.style.color = '#54ff00';
+        btn.style.fontSize = '1em';
+
+        let expanded = false;
+        btn.addEventListener('click', () => {
+            expanded = !expanded;
+            items.forEach((item, index) => {
+                if (index >= showCount) {
+                    item.style.display = expanded ? 'list-item' : 'none';
+                }
+            });
+            btn.textContent = expanded ? 'Weniger anzeigen' : 'Mehr anzeigen';
+        });
+
+        // Insert the button after the last visible <li> (the showCount-1th)
+        const lastVisibleItem = items[showCount - 1];
+        lastVisibleItem.parentNode.insertBefore(btn, lastVisibleItem.nextSibling);
+    }
 
 });
 
