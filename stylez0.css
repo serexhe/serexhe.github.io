@@ -27,33 +27,35 @@ body {
 
 .image-wrapper {
     position: relative;
-    display: block;
     width: 100%;
     max-width: 100%;
+    padding-top: 66.65%; /* (height/width) * 100% => 1333/2000 = 0.6665 */
+    overflow: hidden;
+    display: block;
   }
   
-  .image-wrapper .blur-up {
-    display: block;
-    filter: blur(1px);
-    transform: scale(1.05);
-    transition: opacity 0.1s ease;
+  .image-wrapper .blur-up,
+  .image-wrapper .full-image {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
-    height: auto;
-    will-change: opacity;
+    height: 100%;
+    object-fit: cover; /* keeps aspect ratio without distortion */
+    transition: opacity 0.1s ease;
+    display: block;
+  }
+  
+  .image-wrapper .blur-up {
+    filter: blur(1px);
     opacity: 1;
     pointer-events: none;
+    /* Removed transform: scale(1.05); */
   }
   
   .image-wrapper .full-image {
-    display: block;
-    width: 100%;
-    height: auto;
-    position: relative;
     opacity: 0;
-    transition: opacity 0.1s ease;
+    /* position: absolute already set */
   }
   
   .image-wrapper.loaded .full-image {
@@ -63,6 +65,7 @@ body {
   .image-wrapper.loaded .blur-up {
     opacity: 0;
   }
+  
   
   
   .blur-up {
