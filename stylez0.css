@@ -224,7 +224,7 @@ cursor: pointer;
 @media (min-width: 769px) {
 /* New for image-half */
 .image-half {
-  width: 50%;
+  width: 70%;
   margin: 0 auto;
   text-align: center; /* also centers figcaption */
 }
