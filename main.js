@@ -28,6 +28,19 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
+// References show more toggle
+const showCount = 8;
+const items = document.querySelectorAll('li.more-reference');
+
+if (items.length > showCount) {
+    // Initially hide all after showCount
+    items.forEach((item, index) => {
+        if (index >= showCount) {
+            item.style.display = 'none';
+        }
+    });
+
+    // Create toggle element
     const toggleText = document.createElement('span');
     toggleText.textContent = 'Mehr anzeigen';
     toggleText.style.cursor = 'pointer';
@@ -36,25 +49,26 @@ document.addEventListener('DOMContentLoaded', () => {
     toggleText.style.userSelect = 'none';
     toggleText.style.display = 'inline-block';
     toggleText.style.margin = '10px 0';
-    
-    // Place it just once, always at the end
+
+    let expanded = false;
+
+    toggleText.addEventListener('click', () => {
+        expanded = !expanded;
+
+        items.forEach((item, index) => {
+            if (index >= showCount) {
+                item.style.display = expanded ? 'list-item' : 'none';
+            }
+        });
+
+        toggleText.textContent = expanded ? 'Weniger anzeigen' : 'Mehr anzeigen';
+    });
+
+    // Append the toggle just once, at the end
     const referenceList = document.querySelector('ul#references-list');
     referenceList.appendChild(toggleText);
-    
-    let expanded = false;
-    
-    toggleText.addEventListener('click', () => {
-      expanded = !expanded;
-    
-      items.forEach((item, index) => {
-        if (index >= showCount) {
-          item.style.display = expanded ? 'list-item' : 'none';
-        }
-      });
-    
-      toggleText.textContent = expanded ? 'Weniger anzeigen' : 'Mehr anzeigen';
-    });
-    
+}
+
 
 
 });
