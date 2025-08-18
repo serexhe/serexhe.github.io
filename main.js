@@ -55,7 +55,7 @@ if (items.length > showCount) {
 
         items.forEach((item, index) => {
             if (index >= showCount) {
-                item.style.display = expanded ? '' : 'none';
+                item.style.display = expanded ? 'list-item' : 'none'
             }
         });
 
