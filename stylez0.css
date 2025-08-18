@@ -208,6 +208,20 @@ cursor: pointer;
 }
 
 
+/* Default (mobile-first): full width */
+.image-half {
+  width: 100%;
+  margin: 0 auto;
+}
+
+/* On tablets and desktops: half width and centered */
+@media (min-width: 769px) {
+  .image-half {
+    width: 50%;
+    max-width: 100%;
+    margin: 0 auto;
+  }
+
 
 /* neuertel */
 @media (max-width: 768px) {
