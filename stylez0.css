@@ -202,3 +202,13 @@ cursor: pointer;
     background-color: #de9bff;
     color: white;
 }
+
+
+
+/* neuertel */
+@media (max-width: 768px) {
+    .fixed-element img {
+      width: 100px; /* half of original 200px */
+    }
+  }
+  
