@@ -18,6 +18,18 @@ body {
     margin: 0;
 }
 
+.flex-container > figure.image-half {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.flex-container img {
+  flex: 0 0 auto;
+  width: 100%;
+  height: auto;    
+  display: block;
+}
+
 .flex-container > figure:not(.image-half) > img {
     flex: 0 0 auto;
     width: 100%;
