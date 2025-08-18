@@ -28,17 +28,6 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-   // References show more toggle
-const showCount = 8;
-const items = document.querySelectorAll('li.more-reference');
-
-if (items.length > showCount) {
-    items.forEach((item, index) => {
-        if (index >= showCount) {
-            item.style.display = 'none';
-        }
-    });
-
     const toggleText = document.createElement('span');
     toggleText.textContent = 'Mehr anzeigen';
     toggleText.style.cursor = 'pointer';
@@ -47,35 +36,25 @@ if (items.length > showCount) {
     toggleText.style.userSelect = 'none';
     toggleText.style.display = 'inline-block';
     toggleText.style.margin = '10px 0';
-
+    
+    // Place it just once, always at the end
+    const referenceList = document.querySelector('ul#references-list');
+    referenceList.appendChild(toggleText);
+    
     let expanded = false;
-
+    
     toggleText.addEventListener('click', () => {
-        expanded = !expanded;
-
-        items.forEach((item, index) => {
-            if (index >= showCount) {
-                item.style.display = expanded ? 'list-item' : 'none'
-            }
-        });
-
-        toggleText.textContent = expanded ? 'Weniger anzeigen' : 'Mehr anzeigen';
-
-        // Move the toggle to the new position
-        const referenceList = toggleText.closest('ul');
-        if (expanded) {
-            referenceList.appendChild(toggleText); // move to end
-        } else {
-            // place after the last initially visible <li>
-            const lastVisibleItem = items[showCount - 1];
-            lastVisibleItem.parentNode.insertBefore(toggleText, lastVisibleItem.nextSibling);
+      expanded = !expanded;
+    
+      items.forEach((item, index) => {
+        if (index >= showCount) {
+          item.style.display = expanded ? 'list-item' : 'none';
         }
+      });
+    
+      toggleText.textContent = expanded ? 'Weniger anzeigen' : 'Mehr anzeigen';
     });
-
-    // Initial placement after 8th item
-    const lastVisibleItem = items[showCount - 1];
-    lastVisibleItem.parentNode.insertBefore(toggleText, lastVisibleItem.nextSibling);
-}
+    
 
 
 });
