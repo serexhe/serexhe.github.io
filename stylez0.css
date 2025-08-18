@@ -18,7 +18,7 @@ body {
     margin: 0;
 }
 
-.flex-container img {
+.flex-container > figure:not(.image-half) > img {
     flex: 0 0 auto;
     width: 100%;
     height: auto;    
