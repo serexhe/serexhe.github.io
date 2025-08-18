@@ -177,6 +177,10 @@ cursor: pointer;
     z-index: 10;
 }
 
+.fixed-element img {
+  width: 200px;
+}
+
 /* ex-H1 */
 .visually-hidden {
     border: 0 !important;
@@ -208,7 +212,7 @@ cursor: pointer;
 /* neuertel */
 @media (max-width: 768px) {
     .fixed-element img {
-      width: 100px; /* half of original 200px */
+      width: 100px;
     }
   }
   
