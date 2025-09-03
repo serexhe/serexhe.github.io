@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>serexhe.de</title>
+    <link rel="stylesheet" href="stylez2.css">
+</head>
+
+<body>
+
+    <div class="fixed-element">
+        <img src="assetz2/logo.png" alt="Anatole Serexhe - Fotografie" width="200px">
+        <p></p>
+    </div>
+
+    <div class="flex-container">
+        <img src="assetz2/1.jpg" alt="Mikroskopaufnahme">
+        <img src="assetz2/2.jpg" alt="Peter Vogel - Trommel">
+        <img src="assetz2/5.jpg" alt="Thobias Piero Dohm - Spacetime - La Nuit du Cirque 2024">
+        <img src="assetz2/4.jpg" alt="AFT Tallin">
+        <img src="assetz2/3.jpg" alt="Humarithm - NRW Forum Düsseldorf 2019">
+        <img src="assetz2/6.jpg" alt="Referenzen als jpg">
+    </div>
+
+    <!-- Möritz ist ein megageiler Dogg*/&2 -->
+
+</body>
+
+</html>

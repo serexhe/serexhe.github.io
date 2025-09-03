@@ -1,246 +1,262 @@
+/* ---------------------------------------
+   Base Setup
+---------------------------------------- */
 body {
-    margin: 0;
-    padding: 0;
-    font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-    font-size: 16px;
+  margin: 0;
+  padding: 0;
+  font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-size: 16px;
 }
 
+::selection {
+  background-color: #de9bff;
+  color: white;
+}
+
+::-moz-selection {
+  background-color: #de9bff;
+  color: white;
+}
+
+/* ex-H1 */
+.visually-hidden {
+  border: 0 !important;
+  clip: rect(1px, 1px, 1px, 1px);
+  clip-path: inset(50%);
+  height: 1px !important;
+  margin: -1px !important;
+  overflow: hidden !important;
+  padding: 0 !important;
+  position: absolute !important;
+  width: 1px !important;
+  white-space: nowrap !important;
+}
+
+
+/* ---------------------------------------
+ Flex Container Layout
+---------------------------------------- */
 .flex-container {
-    display: flex;
-    flex-direction: column;
-    flex-wrap: nowrap;
-    overflow-y: auto;
-    z-index: 0;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  overflow-y: auto;
+  z-index: 0;
 }
 
 .flex-container figure {
-    position: relative;
-    margin: 0;
+  position: relative;
+  margin: 0;
 }
 
+/* Center image-half figures */
 .flex-container > figure.image-half {
   margin-left: auto;
   margin-right: auto;
 }
 
+/* Base image rule */
 .flex-container img {
   flex: 0 0 auto;
   width: 100%;
-  height: auto;    
+  height: auto;
   display: block;
 }
 
+/* Override: exclude image-half so it can be styled separately */
 .flex-container > figure:not(.image-half) > img {
-    flex: 0 0 auto;
-    width: 100%;
-    height: auto;    
-    display: block;
-} 
+  flex: 0 0 auto;
+  width: 100%;
+  height: auto;
+  display: block;
+}
 
+
+/* ---------------------------------------
+ Image Wrapper with Blur-up
+---------------------------------------- */
 .image-wrapper {
-    position: relative;
-    width: 100%;
-    max-width: 100%;
-    padding-top: 66.65%; /* (height/width) * 100% => 1333/2000 = 0.6665 */
-    overflow: hidden;
-    display: block;
-  }
-  
-  .image-wrapper .blur-up,
-  .image-wrapper .full-image {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover; /* keeps aspect ratio without distortion */
-    transition: opacity 0.1s ease;
-    display: block;
-  }
-  
-  .image-wrapper .blur-up {
-    filter: blur(1px);
-    opacity: 1;
-    pointer-events: none;
-    /* Removed transform: scale(1.05); */
-  }
-  
-  .image-wrapper .full-image {
-    opacity: 0;
-    /* position: absolute already set */
-  }
-  
-  .image-wrapper.loaded .full-image {
-    opacity: 1;
-  }
-  
-  .image-wrapper.loaded .blur-up {
-    opacity: 0;
-  }
-  
-  
-  
-  .blur-up {
-    pointer-events: none;
-  }
-  
+  position: relative;
+  width: 100%;
+  max-width: 100%;
+  padding-top: 66.65%;
+  overflow: hidden;
+  display: block;
+}
 
-/* Caption styles */
+.image-wrapper .blur-up,
+.image-wrapper .full-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: opacity 0.1s ease;
+  display: block;
+}
+
+.image-wrapper .blur-up {
+  filter: blur(1px);
+  opacity: 1;
+  pointer-events: none;
+}
+
+.image-wrapper .full-image {
+  opacity: 0;
+}
+
+.image-wrapper.loaded .full-image {
+  opacity: 1;
+}
+
+.image-wrapper.loaded .blur-up {
+  opacity: 0;
+}
+
+.blur-up {
+  pointer-events: none;
+}
+
+
+/* ---------------------------------------
+ Figcaption Styles
+---------------------------------------- */
 figcaption {
-    position: absolute;
-    bottom: 10px;
-    right: 10px;
-    padding: 4px 8px;
-    font-size: 0.9em;
-    z-index: 1;
-    display: none;
-    /* hidden unless content present */
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  padding: 4px 8px;
+  font-size: 0.9em;
+  z-index: 1;
+  display: none;
 }
 
 figcaption:not(:empty) {
-    display: block;
+  display: block;
 }
 
 figcaption.bright {
-    color: white;
-    background-color: rgba(0, 0, 0, 0.4);
+  color: white;
+  background-color: rgba(0, 0, 0, 0.4);
 }
 
 figcaption.dark {
-    color: black;
-    background-color: rgba(255, 255, 255, 0.4);
+  color: black;
+  background-color: rgba(255, 255, 255, 0.4);
 }
 
-/* Reference + Impressum sections */
+
+/* ---------------------------------------
+ Text Sections (Reference + Impressum)
+---------------------------------------- */
 .text-section {
-    background: white;
-    color: black;
-    padding: 40px 20px;
-    max-width: 600px;
-    margin: 0 auto;
-    box-sizing: border-box;
+  background: white;
+  color: black;
+  padding: 40px 20px;
+  max-width: 600px;
+  margin: 0 auto;
+  box-sizing: border-box;
 }
 
 .text-section h2 {
-    font-weight: bold;
-    font-size: 1em;
-    margin-bottom: 1em;
+  font-weight: bold;
+  font-size: 1em;
+  margin-bottom: 1em;
 }
 
-/* Remove default list styling and align all list items to left with no indent */
 .text-section ul {
-    list-style: none;
-    padding-left: 0;
-    margin-left: 0;
+  list-style: none;
+  padding-left: 0;
+  margin-left: 0;
 }
 
 .text-section ul li {
-    margin-bottom: 0.5em;
-    /* No padding-left here so plain text lines align perfectly */
+  margin-bottom: 0.5em;
+}
+
+.text-section p {
+  margin-bottom: 0.5em;
 }
 
 
+/* ---------------------------------------
+ Links
+---------------------------------------- */
+/* Arrows */
 .link-with-arrow {
-    color: inherit;
-    text-decoration: none;
-  }
-  
-  .link-with-arrow::after {
-    content: '\200B➔'; /* \200B is zero-width space to break nicely */
-    color: #54ff00;
-    padding-left: 0.3em; /* spacing between text and arrow */
-    font-size: 1.1em;
-    line-height: 1;
-  }
-  
-  
+  color: inherit;
+  text-decoration: none;
+}
 
+.link-with-arrow::after {
+  content: '\200B➔';
+  color: #54ff00;
+  padding-left: 0.3em;
+  font-size: 1.1em;
+  line-height: 1;
+}
 
 .link-with-arrow:hover,
 .link-with-arrow:focus,
 .link-with-arrow:hover::after,
 .link-with-arrow:focus::after {
-    color: #54ff00;
- cursor: pointer;
+  color: #54ff00;
+  cursor: pointer;
 }
 
-/* Mailto link at bottom */
+/* Mailto */
 .mailto-link {
-    color: inherit;
-    text-decoration: none;
-    /*    transition: color 0.3s ease; */
+  color: inherit;
+  text-decoration: none;
 }
 
 .mailto-link:hover,
 .mailto-link:focus {
-    color: #54ff00;
-cursor: pointer;
+  color: #54ff00;
+  cursor: pointer;
 }
 
-/* Paragraph and list items margin bottom */
-.text-section p {
-    margin-bottom: 0.5em;
-}
 
+/* ---------------------------------------
+ Fixed Elements
+---------------------------------------- */
 .fixed-element {
-    position: fixed;
-    top: 20px;
-    left: 20px;
-    z-index: 10;
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  z-index: 10;
 }
 
 .fixed-element img {
   width: 200px;
 }
 
-/* ex-H1 */
-.visually-hidden {
-    border: 0 !important;
-    clip: rect(1px, 1px, 1px, 1px);
-    clip-path: inset(50%);
-    height: 1px !important;
-    margin: -1px !important;
-    overflow: hidden !important;
-    padding: 0 !important;
-    position: absolute !important;
-    width: 1px !important;
-    white-space: nowrap !important;
-}
 
-::selection {
-    background-color: #de9bff;
-    color: white;
-    /* optional: ensures text is readable */
-}
-
-/* For Firefox */
-::-moz-selection {
-    background-color: #de9bff;
-    color: white;
-}
-
+/* ---------------------------------------
+ Responsive
+---------------------------------------- */
 
 /* tabli deskt: half width and centered */
 @media (min-width: 769px) {
-/* New for image-half */
-.image-half {
-  width: 70%;
-  margin: 0 auto;
-  text-align: center; /* also centers figcaption */
-}
-
-.image-half img {
-  width: 100%;
-  height: auto;
-  display: block;
-  box-sizing: border-box;
+  /* New for image-half */
+  .image-half {
+      width: 50%;
+      margin: 0 auto;
+      text-align: center;
   }
-} 
 
+  .image-half img {
+      width: 100%;
+      height: auto;
+      display: block;
+      box-sizing: border-box;
+  }
+}
 
 /* neuertel */
 @media (max-width: 768px) {
   .fixed-element img {
-    width: 100px;
+      width: 100px;
   }
 }
